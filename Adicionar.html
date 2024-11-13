@@ -1,0 +1,65 @@
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white w-full max-w-sm rounded-lg shadow-lg">
+        <div class="flex justify-between items-center p-4 border-b border-gray-200">
+            <h2 class="text-gray-700 font-semibold">Adicionais</h2>
+            <button class="text-red-500">
+                <a href="app.html">
+                <i class="fas fa-arrow-left"></i>
+                </a>
+            </button>
+        </div>
+        <div class="p-4">
+            <div class="mb-4">
+                <label class="block text-gray-600 mb-1" for="nome-adicional">Nome do adicional:</label>
+                <input class="w-full border border-gray-300 rounded px-3 py-2" type="text" id="nome-adicional" placeholder="Ex.: Complementos, bebidas, bordas...">
+            </div>
+            <div class="flex items-center mb-4">
+                <input class="mr-2" type="checkbox" id="obrigatorio">
+                <label class="text-gray-600" for="obrigatorio">Necessario</label>
+                <div class="ml-auto flex items-center">
+                    <label class="text-gray-600 mr-2" for="maximo">Limite</label>
+                    <input class="w-12 border border-gray-300 rounded px-2 py-1 text-center" type="number" id="maximo" value="3">
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-600 mb-1" for="nome-item">Nome Do Item</label>
+                <input class="w-full border border-gray-300 rounded px-3 py-2" type="text" id="nome-item">
+            </div>
+            <div class="text-red-500 mb-4 cursor-pointer" id="add-item">+ itens</div>
+            <div class="border border-gray-300 rounded p-4 text-center text-gray-500" id="item-list">
+                <i class="fas fa-search text-xl mb-2"></i>
+                <p>Nenhum produto encontrado</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('add-item').addEventListener('click', function() {
+            const itemName = document.getElementById('nome-item').value;
+            if (itemName.trim() !== "") {
+                const itemList = document.getElementById('item-list');
+                const newItem = document.createElement('div');
+                newItem.className = 'border-b border-gray-300 py-2';
+                newItem.textContent = itemName;
+                itemList.appendChild(newItem);
+                document.getElementById('nome-item').value = ""; // Clear the input field
+
+                // Remove the "Nenhum produto encontrado" message if it exists
+                const noProductMessage = itemList.querySelector('p');
+                if (noProductMessage) {
+                    noProductMessage.remove();
+                    const searchIcon = itemList.querySelector('i');
+                    if (searchIcon) {
+                        searchIcon.remove();
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

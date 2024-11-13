@@ -1,0 +1,53 @@
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="w-full max-w-md p-4 bg-white rounded-lg shadow-md">
+        <div class="flex justify-between items-center border-b pb-2 mb-4">
+            <h2 class="text-lg font-semibold">Adicionar Produto</h2>
+            <button class="text-red-500">
+                <a href="app.html">
+                <i class="fas fa-arrow-left"></i>
+                </a>
+            </button>
+        </div>
+        <form>
+            <div class="mb-4">
+                <label class="block text-sm font-medium mb-1">Nome*</label>
+                <div class="relative">
+                    <input type="text" class="w-full pl-10 pr-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Hambúrguer">
+                    <i class="fas fa-tag absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="block text-sm font-medium mb-1">Descrição*</label>
+                <textarea class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" rows="3" placeholder="Pão australiano, 120g de carne, 2 ovos, queijo e presunto"></textarea>
+            </div>
+            <div class="mb-4">
+                <label class="block text-sm font-medium mb-1">Preço*</label>
+                <div class="relative">
+                    <input type="text" class="w-full pl-10 pr-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="25.00">
+                    <i class="fas fa-dollar-sign absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="block text-sm font-medium mb-1">Imagem</label>
+                <div class="relative">
+                    <input type="text" class="w-full pl-10 pr-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Imagem">
+                    <i class="fas fa-image absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="block text-sm font-medium mb-1">Categorias</label>
+                <div class="relative">
+                    <input type="text" class="w-full pl-10 pr-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Categorias">
+                    <i class="fas fa-list absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                </div>
+            </div>
+            <button type="submit" class="w-full py-2 bg-red-500 text-white font-semibold rounded-md hover:bg-red-600">Criar produto</button>
+        </form>
+    </div>
+</body>
+</html>
